@@ -152,3 +152,100 @@ pm.test("dog_age_4", function(){
 ```
 ---
 ## 4. GET/object_info_4
+1. Получить статус код 200
+```js
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+```
+2. Спарсить response body в json
+```js
+let response_parsing = pm.response.json()
+console.log("response_parsing", response_parsing);
+```
+3. Спарсить request.
+```js
+let request_parsing = pm.request.url.query.all()
+console.log("request_parsing", request_parsing);
+```
+4. Проверить, что name в ответе равно name s request (name забрать из request.)
+```js
+pm.test("name from request", function(){
+    pm.expect(response_parsing.name).to.equal(request_parsing[0].value)
+});
+```
+5. Проверить, что age в ответе равно age из request (age забрать из request.)
+```js
+pm.test("age from request", function(){
+    pm.expect(response_parsing.age).to.equal(+request_parsing[1].value)
+});
+```
+6. Вывести в консоль параметр salary из request.
+```js
+console.log("salary from request", request_parsing[2].value);
+```
+7. Вывести в консоль параметр salary из response.
+```js
+console.log("salary from response", response_parsing.salary);
+```
+8. Вывести в консоль 0-й элемент параметра salary из response.
+```js
+console.log("salary_0 from response", response_parsing.salary[0]);
+```
+9. Вывести в консоль 1-й элемент параметра salary параметр salary из response.
+```js
+console.log("salary_1 from response", response_parsing.salary[1]);
+```
+10. Вывести в консоль 2-й элемент параметра salary параметр salary из response.
+```js
+console.log("salary_2 from response", response_parsing.salary[2]);
+```
+11. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
+```js
+pm.test("salary_0 from request", function(){
+    pm.expect(response_parsing.salary[0]).to.equal(+request_parsing[2].value)
+});
+```
+12. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)
+```js
+pm.test("salary_1 from request", function(){
+    pm.expect(+response_parsing.salary[1]).to.equal(request_parsing[2].value*2)
+});
+```
+13. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)
+```js
+pm.test("salary_2 from request", function(){
+    pm.expect(+response_parsing.salary[2]).to.equal(request_parsing[2].value*3)
+});
+```
+14. Создать в окружении переменную name
+```js
+pm.environment.set("name");
+```
+15. Создать в окружении переменную age
+```js
+pm.environment.set("age");
+```
+16. Создать в окружении переменную salary
+```js
+pm.environment.set("salary");
+```
+17. Передать в окружение переменную name
+```js
+pm.environment.set("name", "Lera");
+```
+18. Передать в окружение переменную age
+```js
+pm.environment.set("age", "25");
+```
+19. Передать в окружение переменную salary
+```js
+pm.environment.set("salary", "1000");
+```
+20. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
+```js
+for (let i of response_parsing.salary) {
+   console.log(i)};
+```
+---
+## 5. POST/user_info_2
