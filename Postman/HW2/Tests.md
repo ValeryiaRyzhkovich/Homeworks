@@ -249,3 +249,109 @@ for (let i of response_parsing.salary) {
 ```
 ---
 ## 5. POST/user_info_2
+1. Статус код 200
+```js
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+```
+2. Спарсить response body в json.
+```js
+let response_parsing = pm.response.json()
+console.log("response_parsing", response_parsing);
+```
+3. Спарсить request.
+```js
+let request_parsing = request.data
+console.log("request_parsing", request_parsing);
+```
+4. Проверить, что json response имеет параметр start_qa_salary
+```js
+pm.test("start_qa_salary", function(){
+    pm.expect(response_parsing).to.have.property("start_qa_salary");
+});
+```
+5. Проверить, что json response имеет параметр qa_salary_after_6_months
+```js
+pm.test("qa_salary_after_6_months", function(){
+    pm.expect(response_parsing).to.have.property("qa_salary_after_6_months");
+});
+```
+6. Проверить, что json response имеет параметр qa_salary_after_12_months
+```js
+pm.test("qa_salary_after_12_months", function(){
+    pm.expect(response_parsing).to.have.property("qa_salary_after_12_months");
+});
+```
+7. Проверить, что json response имеет параметр qa_salary_after_1.5_year
+```js
+pm.test("qa_salary_after_1.5_year", function(){
+    pm.expect(response_parsing).to.have.property("qa_salary_after_1.5_year");
+}); 
+```
+8. Проверить, что json response имеет параметр qa_salary_after_3.5_years
+```js
+pm.test("qa_salary_after_3.5_years", function(){
+    pm.expect(response_parsing).to.have.property("qa_salary_after_3.5_years");
+}); 
+```
+9. Проверить, что json response имеет параметр person
+```js
+pm.test("person", function(){
+    pm.expect(response_parsing).to.have.property("person");
+});
+```
+10. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)
+```js
+pm.test("start_qa_salary from request", function(){
+    pm.expect(response_parsing.start_qa_salary).to.equal(+request_parsing.salary);
+});
+```
+11. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request.)
+```js
+pm.test("qa_salary_after_6_months from request", function(){
+    pm.expect(response_parsing.qa_salary_after_6_months).to.equal(+request_parsing.salary*2);
+});
+```
+12. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request.)
+```js
+pm.test("qa_salary_after_12_months from request", function(){
+    pm.expect(response_parsing.qa_salary_after_12_months).to.equal(+request_parsing.salary*2.7);
+});
+```
+13. Проверить, что параметр qa_salary_after_1.5_year равен salary*3.3 из request (salary забрать из request.)
+```js
+pm.test("qa_salary_after_1.5_year from request", function(){
+    pm.expect(response_parsing["qa_salary_after_1.5_year"]).to.equal(+request_parsing.salary*3.3);
+});
+```
+14. Проверить, что параметр qa_salary_after_3.5_years равен salary*3.8 из request (salary забрать из request.)
+```js
+pm.test("qa_salary_after_3.5_years from request", function(){
+    pm.expect(response_parsing["qa_salary_after_3.5_years"]).to.equal(+request_parsing.salary*3.8);
+});
+```
+15. Проверить, что в параметре person, 1-й элемент из u_name равен salary из request (salary забрать из request.)
+```js
+pm.test("u_name", function(){
+    pm.expect(response_parsing.person.u_name[1]).to.equal(+request_parsing.salary)
+});
+```
+16. Проверить, что что параметр u_age равен age из request (age забрать из request.)
+```js
+pm.test("u_age", function(){
+    pm.expect(response_parsing.person.u_age).to.equal(+request_parsing.age)
+});
+```
+17. Проверить, что параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request.)
+```js
+pm.test("u_salary_5_years", function(){
+    pm.expect(response_parsing.person.u_salary_5_years).to.equal(+request_parsing.salary*4.2)
+});
+```
+18. Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
+```js
+for (let i = 0; i < response_parsing.person.u_name.length; i++) {
+  console.log("Вывод из списка, элемента с индексом " + i + ": " + response_parsing.person.u_name[i]);
+}
+```
