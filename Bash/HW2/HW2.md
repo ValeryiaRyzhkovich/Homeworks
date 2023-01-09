@@ -335,17 +335,17 @@ git push
 ### 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
 ```
 A bug report should contain the following fields:
-1)ID: 1
-2)Title: Оплата товара
-3)Priority: high
-4)Severity: Major
-5)Environment: Samsung Galaxy
-6)Steps: 1) Зайти на сайт
+1) ID: 1
+2) Title: Оплата товара
+3) Priority: high
+4) Severity: Major
+5) Environment: Samsung Galaxy
+6) Steps: 1) Зайти на сайт
          2) Найти товар
          3) Добавить в корзину
          4) Оплатить товар
-7)Expected Result: оплата прошла
-8)Actual Result: оплата не прошла
+7) Expected Result: оплата прошла
+8) Actual Result: оплата не прошла
 ```
 ### 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
 ```
