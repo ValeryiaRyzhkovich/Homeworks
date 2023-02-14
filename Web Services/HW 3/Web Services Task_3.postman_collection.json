@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "c5f1d990-70cd-4f0d-ac9a-b1f0be5bf871",
+		"name": "Web Services Task_3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23645246"
+	},
+	"item": [
+		{
+			"name": "WS_1/jobs_count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5031/jobs_count",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5031",
+					"path": [
+						"jobs_count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS_2/get_jobs_count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://23.88.52.139:5032/get_jobs_count",
+					"protocol": "http",
+					"host": [
+						"23",
+						"88",
+						"52",
+						"139"
+					],
+					"port": "5032",
+					"path": [
+						"get_jobs_count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS_1/all_jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5031/all_jobs",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5031",
+					"path": [
+						"all_jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS_1/add_job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"firm_title\": \"ITX\",\r\n   \"position_title\": \"Junior QA\",\r\n   \"skills\": [\"testing theory\", \"SQL\", \"Postman\"],\r\n   \"description\": \"Experience with Functional Testing, including Regression Testing, Integration Testing, and API Testing.\",\r\n   \"Job Posting\": \"Feb 14 2023\",\r\n   \"Employee Status\": \"Remote\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5031/add_job",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5031",
+					"path": [
+						"add_job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS_2/add_job_item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"firm_title\": \"ITX\",\r\n   \"position_title\": \"Junior QA\",\r\n   \"skills\": [\"testing theory\", \"SQL\", \"Postman\"],\r\n   \"description\": \"Experience with Functional Testing, including Regression Testing, Integration Testing, and API Testing.\",\r\n   \"Job Posting\": \"Feb 14 2023\",\r\n   \"Employee Status\": \"Remote\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://23.88.52.139:5032/add_job_item",
+					"protocol": "http",
+					"host": [
+						"23",
+						"88",
+						"52",
+						"139"
+					],
+					"port": "5032",
+					"path": [
+						"add_job_item"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
