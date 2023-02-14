@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "2e487650-e781-4334-a050-de481dfe7c18",
+		"name": "Web Services Task_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23645246"
+	},
+	"item": [
+		{
+			"name": "WS_1/jobs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5021/jobs",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5021",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS_1/jobs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"job_id\": 1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5021/jobs",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5021",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS_2/get_job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"job_id\": 1,\r\n  \"j_data\": {\r\n    \"1\": {\r\n    \"Employee Status\": \"Full-time\",\r\n    \"description\": \"Experience with Functional Testing, including Regression Testing, Integration Testing, and API Testing. Experience with creating and executing test scripts. Experience testing developments against wireframes and style guide. Experience with systems, integration, and user acceptance testing. Experience in working with offshore /onsite Model\",\r\n    \"firm_title\": \"Cognizant Technology Solutions\",\r\n    \"position_title\": \"QA Functional Tester\",\r\n    \"skills\": [\r\n        \"postman\",\r\n        \"js\",\r\n        \"client_server\",\r\n        \"api_testing\"\r\n    ]\r\n    }\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://23.88.52.139:5022/get_job",
+					"protocol": "http",
+					"host": [
+						"23",
+						"88",
+						"52",
+						"139"
+					],
+					"port": "5022",
+					"path": [
+						"get_job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS_2/get_job Check",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"job_id\": 1,\r\n  \"j_data\": {\r\n    \"1\": {\r\n      \"Employee Status\": \"Full-time\",\r\n      \"Job Posting\": \"Aug 02 2022\",\r\n      \"description\": \"Experience with Functional Testing, including Regression Testing, Integration Testing, and API Testing. Experience with creating and executing test scripts. Experience testing developments against wireframes and style guide. Experience with systems, integration, and user acceptance testing. Experience in working with offshore /onsite Model\",\r\n      \"firm_title\": \"Cognizant Technology Solutions\",\r\n      \"position_title\": \"QA Functional Tester\",\r\n      \"skills\": [\r\n        \"postman\",\r\n        \"js\",\r\n        \"client_server\",\r\n        \"api_testing\"\r\n      ]\r\n    }}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://23.88.52.139:5022/get_job",
+					"protocol": "http",
+					"host": [
+						"23",
+						"88",
+						"52",
+						"139"
+					],
+					"port": "5022",
+					"path": [
+						"get_job"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
